@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { todolist } from '../mock-todo';
 
 @Component({
   selector: 'app-todolist',
@@ -7,36 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodolistComponent implements OnInit {
 
-  todolist = [
-    {
-      'title': 'Todo 1 title',
-      'sub_title': 'Newest note summary',
-      'description': '...',
-      'icon_detail': 'play',
-      'icon_edit': 'create',
-      'icon_delete': 'close'
-    },
-    {
-      'title': 'Todo 2 title',
-      'sub_title': 'Newest note summary',
-      'description': '...',
-      'icon_detail': 'play',
-      'icon_edit': 'create',
-      'icon_delete': 'close'
-    },
-    {
-      'title': 'Todo 3 title',
-      'sub_title': 'Newest note summary',
-      'description': '...',
-      'icon_detail': 'play',
-      'icon_edit': 'create',
-      'icon_delete': 'close'
-    }
-  ]; 
-  constructor() { }
+  list = todolist; 
+  constructor(private router: Router) { }
 
   ngOnInit() {
       
+  }
+
+  detailTodo(id: number) {
+    console.log("Detail Todo!");
+    let idItem = id;
+    this.router.navigate(['/detail', idItem]);
   }
   
 }

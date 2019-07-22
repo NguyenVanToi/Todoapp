@@ -1,34 +1,31 @@
 <ion-nav component="nav-todo">
   <ion-header translucent>
     <ion-toolbar class="ion-text-center title-todolist">
-      <ion-title>TODO LIST</ion-title>
+      <ion-title>{{itemdemo.title}}</ion-title>
       <ion-icon name="add-circle-outline" color="primary" class="icon-common icon-add"></ion-icon>
     </ion-toolbar>
   </ion-header>
   <ion-content fullscreen>
     <ion-list>
-      <ion-item *ngFor="let item of todolist" onclick="showDetail(item.title)">
+      <ion-item>
         <ion-grid>
           <ion-row>
             <ion-col size="9">
-              <ion-label>
-                <span class="title-todo">{{item.title}}</span>
-              </ion-label>
               <div class="content-todo">
-                <ion-text class="sub-title">{{item.sub_title}}</ion-text>
+                <ion-text class="sub-title">{{itemdemo.sub_title}}</ion-text>
                 <ion-text class="des-todo">
-                    {{item.description}}
+                    {{itemdemo.description}}
                 </ion-text>
               </div>
             </ion-col>
             <ion-col size="1" class="ion-text-center">
-              <ion-icon name="{{item.icon_edit}}" class="icon-edit icon-common" color="warning"></ion-icon>
+              <ion-icon name="{{itemdemo.icon_edit}}" class="icon-edit icon-common" color="warning"></ion-icon>
             </ion-col>
             <ion-col size="1" class="ion-text-center">
-              <ion-icon name="{{item.icon_detail}}" class="icon-detail icon-common" color="primary"></ion-icon>
+              <ion-icon name="{{itemdemo.icon_detail}}" class="icon-detail icon-common" color="primary"></ion-icon>
             </ion-col>
             <ion-col size="1" class="ion-text-center">
-              <ion-icon name="{{item.icon_delete}}" class="icon-delete icon-common" color="danger"></ion-icon>
+              <ion-icon name="{{itemdemo.icon_delete}}" class="icon-delete icon-common" color="danger"></ion-icon>
             </ion-col>
           </ion-row>
         </ion-grid>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { todolist } from '../mock-todo';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detail-todolist',
@@ -7,8 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailTodolistComponent implements OnInit {
 
-  constructor() { }
+  list = todolist;
+  item: object;
+  itemdemo = {
+    "id": 1,
+    'title': 'Todo 1 title',
+    'sub_title': 'Note 1 summary',
+    'description': '...',
+    'icon_detail': 'play',
+    'icon_edit': 'create',
+    'icon_delete': 'close'
+  }
+  constructor(private route: ActivatedRoute) { 
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getItem();
+  }
+
+  getItem(): void {
+    this.route.params.subscribe(params => {
+      let id = params['id'];
+      this.item = this.list.find(x => x.id == id);
+      console.log(typeof(this.item));
+      console.log(this.item['title']);
+      //TODO: get item from todolist
+    })
+  }
 
 }

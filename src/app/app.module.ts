@@ -12,17 +12,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TodolistComponent } from './todolist/todolist.component';
 import { ModalTemplateComponent } from './modal-template/modal-template.component';
+import { DetailTodolistComponent } from './detail-todolist/detail-todolist.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TodolistComponent,
-    ModalTemplateComponent
+    ModalTemplateComponent,
+    DetailTodolistComponent
   ],
   entryComponents: [
     TodolistComponent,
-    ModalTemplateComponent
+    ModalTemplateComponent,
+    DetailTodolistComponent
   ],
   imports: [
     BrowserModule, 
