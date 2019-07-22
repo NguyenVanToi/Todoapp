@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center title-modal-common">
+    <ion-title>{{modalTemplate.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="content-modal">
+    <p class="sub-title">
+      {{modalTemplate.subTitle}}
+    </p>
+    <ion-grid>
+      <div class="forgot-content">
+        <form (ngSubmit)="sendEmail()" *ngIf="modalTemplate.title == 'SendEmail'">
+          <ion-row>
+            <ion-col size="12">
+              <ion-input class="input-common email" type="text" [(ngModel)]="email" placeholder="Type your email" name="email"></ion-input>
+            </ion-col>
+          </ion-row>
+          <div class="form-button">
+            <ion-row>
+              <ion-col offset="0" size="6">
+                <ion-button (click)="dismiss()" color="light" class="btn-close btn-common">
+                  {{modalTemplate.btnCancel}}
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button type="submit" color="light" class="btn-submit btn-common">
+                  {{modalTemplate.btnSubmit}}
+                </ion-button>
+                </ion-col>
+            </ion-row>
+          </div>
+        </form>
+        <form (ngSubmit)="sendEmail()" *ngIf="modalTemplate.title == 'Newpassword'">
+            <ion-row>
+              <ion-col size="12">
+                <ion-input class="input-common email" type="text" [(ngModel)]="email" placeholder="Type your email" name="email"></ion-input>
+              </ion-col>
+            </ion-row>
+            <div class="form-button">
+              <ion-row>
+                <ion-col offset="0" size="6">
+                  <ion-button (click)="dismiss()" color="light" class="btn-close btn-common">
+                    {{modalTemplate.btnCancel}}
+                  </ion-button>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-button type="submit" color="light" class="btn-submit btn-common">
+                    {{modalTemplate.btnSubmit}}
+                  </ion-button>
+                  </ion-col>
+              </ion-row>
+            </div>
+          </form>
+      </div>   
+    </ion-grid>
+  </div>
+</ion-content>
+<ion-footer *ngIf="hasFooter">
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

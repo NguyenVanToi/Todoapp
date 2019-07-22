@@ -1,0 +1,32 @@
+.title-todo {
+    font-size: 20px;
+}
+.sub-title {
+    display: block;
+    float: left;
+}
+.des-todo {
+    display: block;
+    clear: left;
+}
+.title-todolist {
+    ion-title {
+        display: inline-block;
+        padding-top: 15px;
+    }
+    .icon-add {
+        float: right;
+        cursor: pointer;
+        margin-right: 40px;
+    }
+}
+
+.icon-detail {
+    cursor: pointer;
+}
+.icon-delete {
+    cursor: pointer;
+}
+.icon-edit {
+    cursor: pointer;
+}

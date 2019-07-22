@@ -9,10 +9,28 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TodolistComponent } from './todolist/todolist.component';
+import { ModalTemplateComponent } from './modal-template/modal-template.component';
+
+
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  declarations: [
+    AppComponent,
+    TodolistComponent,
+    ModalTemplateComponent
+  ],
+  entryComponents: [
+    TodolistComponent,
+    ModalTemplateComponent
+  ],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,

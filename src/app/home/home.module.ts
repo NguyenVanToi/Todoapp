@@ -5,8 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { TodolistComponent } from '../todolist/todolist.component';
 
 @NgModule({
+  declarations: [
+    HomePage
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -17,7 +21,6 @@ import { HomePage } from './home.page';
         component: HomePage
       }
     ])
-  ],
-  declarations: [HomePage]
+  ]
 })
 export class HomePageModule {}
