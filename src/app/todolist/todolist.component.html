@@ -2,12 +2,12 @@
   <ion-header translucent>
     <ion-toolbar class="ion-text-center title-todolist">
       <ion-title>TODO LIST</ion-title>
-      <ion-icon name="add-circle-outline" color="primary" class="icon-common icon-add"></ion-icon>
+      <ion-icon name="add-circle-outline" color="primary" class="icon-common icon-add" (click)="addModal()"></ion-icon>
     </ion-toolbar>
   </ion-header>
   <ion-content fullscreen>
     <ion-list>
-      <ion-item *ngFor="let item of list" onclick="showDetail(item.title)">
+      <ion-item *ngFor="let item of list">
         <ion-grid>
           <ion-row>
             <ion-col size="9">
@@ -22,13 +22,13 @@
               </div>
             </ion-col>
             <ion-col size="1" class="ion-text-center">
-              <ion-icon name="{{item.icon_edit}}" class="icon-edit icon-common" color="warning"></ion-icon>
+              <ion-icon name="{{item.icon_edit}}" class="icon-edit icon-common" color="warning" (click)="editModal(item.id)"></ion-icon>
             </ion-col>
             <ion-col size="1" class="ion-text-center">
               <ion-icon name="{{item.icon_detail}}" class="icon-detail icon-common" color="primary" (click)="detailTodo(item.id)"></ion-icon>
             </ion-col>
             <ion-col size="1" class="ion-text-center">
-              <ion-icon name="{{item.icon_delete}}" class="icon-delete icon-common" color="danger"></ion-icon>
+              <ion-icon name="{{item.icon_delete}}" class="icon-delete icon-common" color="danger" (click)="deleteModal(item.id)"></ion-icon>
             </ion-col>
           </ion-row>
         </ion-grid>

@@ -12,11 +12,12 @@ import { ModalTemplateComponent } from '../modal-template/modal-template.compone
 })
 export class HomePage {
 
-  constructor(private router: Router, public modalController: ModalController) {}
   username: string = '';
   password: string = '';
   user = "toi";
   pass = "1234";
+  loginFail = false;
+  constructor(private router: Router, public modalController: ModalController) {}
 
   login() {
     if (this.username == this.user && this.password == this.pass)
@@ -26,6 +27,7 @@ export class HomePage {
     }
     else {
       console.log("Login Fail!");
+      this.loginFail = true;
     }
   }
   async presentModal() {

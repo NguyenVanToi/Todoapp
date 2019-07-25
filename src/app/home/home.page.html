@@ -22,14 +22,17 @@
           </div>
         </form>
       </ion-col>
+      <ion-col size="12" offset="5">
+        <ion-text color="danger" *ngIf="loginFail">Wrong password or username</ion-text>
+      </ion-col>
     </ion-row>
   </ion-grid>
   
 <ion-footer>
   <ion-grid>
     <ion-row>
-      <ion-col size="4" offset="4">
-        <ion-text color="primary" class="text-footer" (click)="presentModal()">Forgot your password?</ion-text>
+      <ion-col size="4">
+        <ion-text color="primary" class="text-deco" (click)="presentModal()">Forgot your password?</ion-text>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -31,16 +31,31 @@
             </ion-row>
           </div>
         </form>
-        <form (ngSubmit)="sendEmail()" *ngIf="modalTemplate.title == 'Newpassword'">
+        <form (ngSubmit)="resetPassword()" *ngIf="modalTemplate.title == 'resetPassword'">
             <ion-row>
               <ion-col size="12">
-                <ion-input class="input-common email" type="text" [(ngModel)]="email" placeholder="Type your email" name="email"></ion-input>
+                <ion-item class="input-group" lines="none">
+                  <ion-label floating class="label-input">Verify code</ion-label>
+                  <ion-input class="input-common" type="text" [(ngModel)]="code" name="code"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="12">
+                <ion-item class="input-group" lines="none">
+                  <ion-label class="label-input">New Password</ion-label>
+                  <ion-input class="input-common" type="text" [(ngModel)]="newPass" name="new-pass"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="12">
+                <ion-item class="input-group" lines="none">
+                  <ion-label class="label-input">Confirm Password</ion-label>
+                  <ion-input class="input-common" type="text" [(ngModel)]="confirmPass" name="confirm-pass"></ion-input>
+                </ion-item>
               </ion-col>
             </ion-row>
             <div class="form-button">
               <ion-row>
                 <ion-col offset="0" size="6">
-                  <ion-button (click)="dismiss()" color="light" class="btn-close btn-common">
+                  <ion-button (click)="dismiss()" color="light" class="btn-close btn-common" *ngIf="modalTemplate.btnCancel == false">
                     {{modalTemplate.btnCancel}}
                   </ion-button>
                 </ion-col>
@@ -51,7 +66,70 @@
                   </ion-col>
               </ion-row>
             </div>
+            <ion-row>
+                <ion-col size="4">
+                  <ion-text color="primary" class="text-deco" (click)="presentModal()">Resend new verify code</ion-text>
+                </ion-col>
+              </ion-row>
           </form>
+        <form (ngSubmit)="addTodo()" *ngIf="modalTemplate.title == 'addTodo'">
+          <ion-row>
+            <ion-col size="12">
+              <ion-input class="input-common" type="text" [(ngModel)]="nameTodo" placeholder="Type todo's name" name="name"></ion-input>
+            </ion-col>
+          </ion-row>
+          <div class="form-button">
+            <ion-row>
+              <ion-col offset="0" size="6">
+                <ion-button (click)="dismiss()" color="light" class="btn-close btn-common">
+                  {{modalTemplate.btnCancel}}
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button type="submit" color="light" class="btn-submit btn-common">
+                  {{modalTemplate.btnSubmit}}
+                </ion-button>
+                </ion-col>
+            </ion-row>
+          </div>
+        </form>
+        <form (ngSubmit)="editTodo()" *ngIf="modalTemplate.title == 'editTodo'">
+          <ion-row>
+            <ion-col size="12">
+              <ion-input class="input-common" type="text" [(ngModel)]="newName" placeholder="Type todo's name" name="name"></ion-input>
+            </ion-col>
+          </ion-row>
+          <div class="form-button">
+            <ion-row>
+              <ion-col offset="0" size="6">
+                <ion-button (click)="dismiss()" color="light" class="btn-close btn-common">
+                  {{modalTemplate.btnCancel}}
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button type="submit" color="light" class="btn-submit btn-common">
+                  {{modalTemplate.btnSubmit}}
+                </ion-button>
+                </ion-col>
+            </ion-row>
+          </div>
+        </form>
+        <form (ngSubmit)="deleteTodo()" *ngIf="modalTemplate.title == 'deleteTodo'">
+          <div class="form-button">
+            <ion-row>
+              <ion-col offset="0" size="6">
+                <ion-button (click)="dismiss()" color="light" class="btn-close btn-common">
+                  {{modalTemplate.btnCancel}}
+                </ion-button>
+              </ion-col>
+              <ion-col size="6">
+                <ion-button type="submit" color="light" class="btn-submit btn-common">
+                  {{modalTemplate.btnSubmit}}
+                </ion-button>
+                </ion-col>
+            </ion-row>
+          </div>
+        </form>
       </div>   
     </ion-grid>
   </div>
