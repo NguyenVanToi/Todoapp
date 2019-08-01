@@ -13,6 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TodolistComponent } from './todolist/todolist.component';
 import { ModalTemplateComponent } from './modal-template/modal-template.component';
 import { DetailTodolistComponent } from './detail-todolist/detail-todolist.component';
+import { ProfileManagementComponent } from './profile-management/profile-management.component';
 
 
 @NgModule({
@@ -20,12 +21,14 @@ import { DetailTodolistComponent } from './detail-todolist/detail-todolist.compo
     AppComponent,
     TodolistComponent,
     ModalTemplateComponent,
-    DetailTodolistComponent
+    DetailTodolistComponent,
+    ProfileManagementComponent
   ],
   entryComponents: [
     TodolistComponent,
     ModalTemplateComponent,
-    DetailTodolistComponent
+    DetailTodolistComponent,
+    ProfileManagementComponent
   ],
   imports: [
     BrowserModule, 

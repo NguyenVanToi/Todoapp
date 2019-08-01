@@ -13,16 +13,20 @@ export class ModalTemplateComponent implements OnInit {
   email: string;
   nameTodo: string;
   newName: string;
+  hasFooter: boolean;
+  confirmPass: string;
+  newPass: string;
+  code: string;
   @Input() typeModal: object;
   constructor(private modalCtrl: ModalController, public modalParams: NavParams) {
-    this.modalTemplate = this.modalParams.get("typeModal");
+    this.modalTemplate = this.modalParams.get('typeModal');
     console.log(this.modalTemplate);
   }
 
   
 
   ngOnInit() {
-    let hasFooter = this.modalTemplate.hasFooter;
+    this.hasFooter = this.modalTemplate.hasFooter;
   }
   
   async sendEmail() {
@@ -39,7 +43,7 @@ export class ModalTemplateComponent implements OnInit {
           "subTitle": "A verify code was sent to your mail. Please check your mail inbox to got its",
           "btnCancel": "false",
           "btnSubmit": "Submit",
-          "hasFooter": "false"
+          "hasFooter": 'false'
         }
       }
     });
@@ -95,6 +99,14 @@ export class ModalTemplateComponent implements OnInit {
     this.modalCtrl.dismiss({
       'dismissed': true
     });
+  }
+
+  resetPassword(){
+
+  }
+
+  resentModal(){
+    
   }
 
 }

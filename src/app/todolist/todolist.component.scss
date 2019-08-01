@@ -30,3 +30,14 @@
 .icon-edit {
     cursor: pointer;
 }
+ion-footer {
+    .title-footer {
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .icon-profile {
+        float: right;
+        font-size: 35px;
+        cursor: pointer;
+    }
+}

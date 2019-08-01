@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { todolist } from '../mock-todo';
 import { ModalController } from '@ionic/angular';
 import { ModalTemplateComponent } from '../modal-template/modal-template.component';
+import { ProfileManagementComponent } from '../profile-management/profile-management.component';
 
 @Component({
   selector: 'app-todolist',
@@ -46,8 +47,7 @@ export class TodolistComponent implements OnInit {
       return await modal.present();
     } else {
       console.log("id null");
-    }
-    
+    } 
   }
   async addModal() {
     const modal = await this.modalCtrl.create({
@@ -83,6 +83,13 @@ export class TodolistComponent implements OnInit {
           "hasFooter": "false"
         }
       }
+    });
+    return await modal.present();
+  }
+
+  async profileModal() {
+    const modal = await this.modalCtrl.create({
+      component: ProfileManagementComponent
     });
     return await modal.present();
   }
